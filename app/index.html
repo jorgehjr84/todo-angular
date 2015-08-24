@@ -31,10 +31,10 @@
     <div id="input" ng-controller="todoController">
 
       <form name="frm" ng-submit="addTodo()">
-    <input type="text" name="newtodo" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3" ng-model="newTodo" required/>
-        </form>
+              <input type="text" name="newtodo" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3" ng-model="newTodo" required/>
+              <button ng-disabled="frm.$invalid">Submit</button>
+      </form>
 
-          <button ng-disabled="frm.$invalid">Submit</button>
           <button ng-click="clearCompleted()"> Clear Completed</button>
       <ul id="todoList" class="col-md-6 col-md-offset-3">
         <li ng-repeat="todo in todos">
