@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en" ng-app="ToDo">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -22,14 +22,27 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body >
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div class="container">
-    <div id="input">
-      <input type="text" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3">
+    <div id="input" ng-controller="todoController">
+
+      <form name="frm" ng-submit="addTodo()">
+    <input type="text" name="newtodo" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3" ng-model="newTodo" required/>
+        </form>
+
+          <button ng-disabled="frm.$invalid">Submit</button>
+          <button ng-click="clearCompleted()"> Clear Completed</button>
+      <ul id="todoList" class="col-md-6 col-md-offset-3">
+        <li ng-repeat="todo in todos">
+          {{
+            todo.title
+          }}
+        </li>
+      </ul>
 
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
