@@ -38,9 +38,13 @@
           <button ng-click="clearCompleted()"> Clear Completed</button>
       <ul id="todoList" class="col-md-6 col-md-offset-3">
         <li ng-repeat="todo in todos">
-          {{
-            todo.title
-          }}
+          <input type="checkbox" ng-model="todo.done"/>
+          <span ng-class="{'done': todo.done}">
+            {{
+              todo.title
+            }}
+          </span>
+
         </li>
       </ul>
 

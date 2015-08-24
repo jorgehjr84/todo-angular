@@ -15,4 +15,12 @@ $icon-font-path: '../fonts/';
 }
 #todoList{
   padding-top: 5em;
+  li{
+    list-style: none;
+  }
+}
+
+.done{
+  text-decoration: line-through;
+  color: lightgrey;
 }
