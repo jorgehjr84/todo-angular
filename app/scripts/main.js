@@ -2,18 +2,24 @@ var app = angular.module('ToDo',[]);
 
 
 app.controller('todoController', ['$scope',function($scope){
-  $scope.todos = [
+  var self = this;
+
+  self.todos = [
   {'title': 'Build a todo app', 'done': false}
 ];
 
-$scope.addTodo  = function(){
+  self.addTodo  = function(){
 
-  $scope.todos.push({'title':$scope.newTodo, 'done':false})
-  $scope.newTodo = '';
+  self.todos.push({'title':self.newTodo, 'done':false})
+  self.newTodo = '';
 };
 
 
-$scope.clearCompleted = function(){}
+  self.clearCompleted = function(){
+    self.todos = self.todos.filter(function(item){
+    return !item.done;
+  })
+}
 
 
 
