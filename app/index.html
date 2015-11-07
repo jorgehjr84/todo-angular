@@ -27,28 +27,29 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-    <div id="input" ng-controller="todoController as todo">
+      <div class="container">
 
-      <form name="frm" ng-submit="todo.addTodo()">
-              <input type="text" name="newtodo" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3" ng-model="todo.newTodo" required/>
-              <button ng-disabled="frm.$invalid">Submit</button>
-        </form>
+   <div id="input" ng-controller="todoController as todo">
 
-          <button ng-click="todo.clearCompleted()"> Clear Completed</button>
-      <ul id="todoList" class="col-md-6 col-md-offset-3">
-        <li ng-repeat="todo in todo.todos">
-          <input type="checkbox" ng-model="todo.done"/>
-          <span ng-class="{'done': todo.done}">
-            {{
-              todo.title
-            }}
-          </span>
+  <form name="frm" ng-submit="todo.addTodo()">
+          <input type="text" name="newtodo" placeholder="What Needs to be Done??"  id="input-field" class="col-md-6 col-md-offset-3" ng-model="todo.newTodo" required/>
+          <button ng-disabled="frm.$invalid">Submit</button>
+    </form>
 
-        </li>
-      </ul>
+      <button ng-click="todo.clearCompleted()"> Clear Completed</button>
+  <ul id="todoList" class="col-md-6 col-md-offset-3">
+    <li ng-repeat="todo in todo.todos">
+      <input type="checkbox" ng-model="todo.done"/>
+      <span ng-class="{'done': todo.done}">
+        {{
+          todo.title
+        }}
+      </span>
 
-    </div>
+    </li>
+  </ul>
+
+</div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
