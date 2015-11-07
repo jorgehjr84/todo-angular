@@ -9,7 +9,18 @@ $icon-font-path: '../fonts/';
   padding-top: 10em;
   #input-field{
     height: 4em;
-    box-shadow: 4px 5px 5px 1px #ccc; 
+    box-shadow: 4px 5px 5px 1px #ccc;
   }
 
+}
+#todoList{
+  padding-top: 5em;
+  li{
+    list-style: none;
+  }
+}
+
+.done{
+  text-decoration: line-through;
+  color: lightgrey;
 }
